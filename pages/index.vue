@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mt-16 pt-10 bg-text">
+    <div class="mt-16 pt-10 bg-text bg-fixed md:bg-fixed">
       <div class="container mx-auto mt-16 text-center">
         <h1
           class="
@@ -146,6 +146,7 @@
         </div>
       </div>
     </div>
+    
   </div>
 </template>
 <style>

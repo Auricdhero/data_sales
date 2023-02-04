@@ -19,7 +19,7 @@
       <div
         class="container flex flex-wrap items-center justify-between mx-auto"
       >
-        <a href="https://flowbite.com/" class="flex items-center">
+        <NuxtLink to="/" class="flex items-center">
           <img
             src="https://flowbite.com/docs/images/logo.svg"
             class="h-6 mr-3 sm:h-9"
@@ -35,7 +35,7 @@
             "
             >Flowbite</span
           >
-        </a>
+        </NuxtLink>
         <div class="flex md:order-2">
           <button
             type="button"
@@ -121,26 +121,8 @@
             "
           >
             <li>
-              <a
-                href="#"
-                class="
-                  block
-                  py-2
-                  pl-3
-                  pr-4
-                  text-white
-                  bg-blue-700
-                  rounded
-                  md:bg-transparent md:text-blue-700 md:p-0
-                  dark:text-white
-                "
-                aria-current="page"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
+              <NuxtLink
+                to="/"
                 class="
                   block
                   py-2
@@ -159,7 +141,31 @@
                   md:dark:hover:bg-transparent
                   dark:border-gray-700
                 "
-                >About</a
+                >Home</NuxtLink
+              >
+            </li>
+            <li>
+              <NuxtLink
+                to="/about"
+                class="
+                  block
+                  py-2
+                  pl-3
+                  pr-4
+                  text-gray-700
+                  rounded
+                  hover:bg-gray-100
+                  md:hover:bg-transparent
+                  md:hover:text-blue-700
+                  md:p-0
+                  md:dark:hover:text-white
+                  dark:text-gray-400
+                  dark:hover:bg-gray-700
+                  dark:hover:text-white
+                  md:dark:hover:bg-transparent
+                  dark:border-gray-700
+                "
+                >About</NuxtLink
               >
             </li>
             <li>
@@ -217,5 +223,4 @@
   </div>
 </template>
 <script>
-
 </script>
