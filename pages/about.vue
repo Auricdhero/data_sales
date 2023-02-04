@@ -37,8 +37,10 @@
     </div>
     <div class="container mx-auto mt-5">
       <h2 class="text-dark text-center text-3xl">Recommendations</h2>
-      <div class="grid gap-4 grid-cols-3 grid-rows-1">
-        <div class="container">
+      <div
+        class="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0"
+      >
+        <div class="group relative">
           <figure
             class="
               flex flex-col
@@ -87,7 +89,7 @@
             </figcaption>
           </figure>
         </div>
-        <div class="container">
+        <div class="group relative">
           <figure
             class="
               flex flex-col
@@ -136,7 +138,7 @@
             </figcaption>
           </figure>
         </div>
-        <div class="container">
+        <div class="group relative">
           <figure
             class="
               flex flex-col
@@ -187,7 +189,7 @@
         </div>
       </div>
     </div>
-    <br>
+    <br />
   </div>
 </template>
 <style>
