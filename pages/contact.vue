@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mt-10 pt-10 container mx-auto" style="height: 30em;">
+    <div class="mt-16 pt-16 container mx-auto" style="height: 35em;">
       <div class="grid grid-x-1 grid-y-1">
         <form action="">
           <div class="mb-6">
@@ -82,7 +82,7 @@
                 text-gray-900
                 dark:text-dark
               "
-              >Your message</label
+              >Message</label
             >
             <textarea
               id="message"
@@ -103,7 +103,7 @@
                 dark:focus:ring-blue-500
                 dark:focus:border-blue-500
               "
-              placeholder="Write your thoughts here..."
+              placeholder="Write your message here..."
             ></textarea>
           </div>
           <button
