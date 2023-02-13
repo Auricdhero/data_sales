@@ -1,0 +1,1 @@
+import{b as e,o as t,t as s}from"./entry.eaf08b88.js";const a=s("div",{class:"pt-10 mt-10 pl-10"}," fgjahsdjfgasdjkfg ",-1),o=[a],d={__name:"index",setup(c){return(_,n)=>(t(),e("div",null,o))}};export{d as default};
