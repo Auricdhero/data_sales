@@ -18,5 +18,22 @@
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.12.3"
-  }
+  },
+  "description": "## Build Setup",
+  "main": "ecosystem.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Auricdhero/data_sales.git"
+  },
+  "keywords": [
+    "jessco",
+    "data",
+    "sales"
+  ],
+  "author": "Auricdhero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Auricdhero/data_sales/issues"
+  },
+  "homepage": "https://github.com/Auricdhero/data_sales#readme"
 }
