@@ -32,7 +32,7 @@ jobs:
       - name: ssh deploy
         uses: easingthemes/ssh-deploy@main
         with:
-          publish_dir: .output/public
+          publish_dir: dist
 
         env:
           SSH_PRIVATE_KEY: ${{ secrets.JESSCO_AWS }}
