@@ -21,7 +21,7 @@ jobs:
         run: npm install
       
       - name: Generate static files
-        run: npm run build 
+        run: npm run build && npm run generate
 
       - name: install pm2
         run: npm install pm2 -g
