@@ -40,4 +40,4 @@ jobs:
           REMOTE_USER: ubuntu
           TARGET: /home/ubuntu/jessco.store/
           # publish_dir: .output/public
-          EXCLUDE: "/.output/public/, /node_modules/"
+          # EXCLUDE: "/.output/public/, /node_modules/"
