@@ -1,0 +1,43 @@
+name: Push-to-EC2
+
+# Trigger deployment only on push to master branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to EC2 on main branch push
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the files
+        uses: actions/checkout@v3
+        with: 
+          node-version: '19.x'
+
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Generate static files
+        run: npm run build 
+
+      - name: install pm2
+        run: npm install pm2 -g
+        
+      - name: serving on pm2
+        run: pm2 start
+
+      - name: ssh deploy
+        uses: easingthemes/ssh-deploy@main
+        with:
+          publish_dir: .output/public
+
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.JESSCO_AWS }}
+          REMOTE_HOST: ec2-54-158-210-55.compute-1.amazonaws.com
+          REMOTE_USER: ubuntu
+          TARGET: /home/ubuntu/jessco.store/
+          # publish_dir: .output/public
+          EXCLUDE: "/.output/public/, /node_modules/"
