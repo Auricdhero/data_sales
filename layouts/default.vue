@@ -5,9 +5,13 @@
       <v-sheet
         id="scrolling-techniques-7"
         class="overflow-y-auto"
-        max-height="600"
+        max-height="723"
       >
-        <v-container fluid style="height: 100%;"><Nuxt /> </v-container>
+        <v-container fluid style="height: 100%;">
+          
+          <Nuxt /> 
+          <theFooter />
+        </v-container>
       </v-sheet>
     </v-main>
   </v-app>
