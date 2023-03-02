@@ -254,28 +254,41 @@
       </v-row>
     </v-container>
 
-    
-      <div>
-        <pre>{{ JSON.stringify(merchant, null, 2) }}</pre>
-        <pre>{{ JSON.stringify(categories, null, 2) }}</pre>
-        <pre>{{ JSON.stringify(products, null, 2) }}</pre>
-      </div>
-    
-  </div>
+    <div>
+      <h1>{{ merchant.business_name }}</h1>
+      <category-list :categories="categories"></category-list>
+      <product-list :products="products"></product-list>
 
-  
+      <h3>
+        <n-link to="/products">Products</n-link>
+      </h3>
+    </div>
+  </div>
 </template>
 
 <script>
-import mtnLogo from '~/static/mtnLogo.jpeg'
-import tigoLogo from '~/static/airteltigo.png'
-import voda from '~/static/vodaLogo.png'
+// import commerce from "~/common/commerce";
+import mtnLogo from "~/static/mtnLogo.jpeg";
+import tigoLogo from "~/static/airteltigo.png";
+import voda from "~/static/vodaLogo.png";
 export default {
   name: "IndexPage",
   data: () => ({
     mtnLogo,
     tigoLogo,
-    voda
-  })
+    voda,
+  }),
+
+  async asyncData({ $commerce }) {
+    const merchant = await $commerce.merchants.about();
+    const { data: categories } = await $commerce.categories.list();
+    const { data: products } = await $commerce.products.list();
+
+    return {
+      merchant,
+      categories,
+      products,
+    };
+  },
 };
 </script>
