@@ -14,7 +14,7 @@
 
           <v-spacer></v-spacer>
 
-          <v-btn rounded color="primary" dark> Get Started </v-btn>
+          <v-btn to="/login" rounded color="primary" dark> Get Started </v-btn>
         </v-app-bar>
         <v-navigation-drawer v-model="drawer" absolute temporary>
           <v-list nav dense>
@@ -42,16 +42,7 @@
                 <v-list-item-title>Contact</v-list-item-title>
               </v-btn>
             </v-list-item-group>
-            <v-list-item-group>
-              <v-btn to="/login" plain>
-                <v-list-item>
-                  <v-list-item-icon>
-                    <v-icon>mdi-phone</v-icon>
-                  </v-list-item-icon>
-                  <v-list-item-title>Login</v-list-item-title>
-                </v-list-item>
-              </v-btn>
-            </v-list-item-group>
+
           </v-list>
         </v-navigation-drawer>
         <v-sheet
