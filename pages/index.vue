@@ -153,7 +153,7 @@
         <v-col>
           <v-hover v-slot="{ hover }">
             <v-card class="mx-auto" color="grey lighten-4" max-width="600">
-              <v-img :aspect-ratio="16 / 9" :src="vodaLogo">
+              <v-img :aspect-ratio="16 / 9" :src="voda">
                 <v-expand-transition>
                   <div
                     v-if="hover"
@@ -255,11 +255,11 @@
     </v-container>
 
     
-      <!-- <div>
+      <div>
         <pre>{{ JSON.stringify(merchant, null, 2) }}</pre>
         <pre>{{ JSON.stringify(categories, null, 2) }}</pre>
         <pre>{{ JSON.stringify(products, null, 2) }}</pre>
-      </div> -->
+      </div>
     
   </div>
 
@@ -268,13 +268,13 @@
 
 <script>
 import mtnLogo from '~/static/mtnLogo.jpeg'
-import tigo from '~/static/airteltigo.png'
+import tigoLogo from '~/static/airteltigo.png'
 import voda from '~/static/vodaLogo.png'
 export default {
   name: "IndexPage",
   data: () => ({
     mtnLogo,
-    tigo,
+    tigoLogo,
     voda
   })
 };
