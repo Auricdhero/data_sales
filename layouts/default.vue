@@ -19,34 +19,28 @@
         <v-navigation-drawer v-model="drawer" absolute temporary>
           <v-list nav dense>
             <v-list-item-group v-model="group">
-              <NuxtLink class="navLink" to="/">
-                <v-list-item>
-                  <v-list-item-icon>
-                    <v-icon>mdi-home</v-icon>
-                  </v-list-item-icon>
-                  <v-list-item-title>Home</v-list-item-title>
-                </v-list-item>
-              </NuxtLink>
+              <v-btn to="/" plain>
+                <v-list-item-icon>
+                  <v-icon>mdi-home</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title>Home</v-list-item-title>
+              </v-btn>
             </v-list-item-group>
             <v-list-item-group>
-              <NuxtLink class="navLink" to="/about">
-                <v-list-item>
-                  <v-list-item-icon>
-                    <v-icon>mdi-account</v-icon>
-                  </v-list-item-icon>
-                  <v-list-item-title>About</v-list-item-title>
-                </v-list-item>
-              </NuxtLink>
+              <v-btn to="/about" plain>
+                <v-list-item-icon>
+                  <v-icon>mdi-account</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title>About</v-list-item-title>
+              </v-btn>
             </v-list-item-group>
             <v-list-item-group>
-              <NuxtLink class="navLink" to="/contact">
-                <v-list-item>
-                  <v-list-item-icon>
-                    <v-icon>mdi-phone</v-icon>
-                  </v-list-item-icon>
-                  <v-list-item-title>Contact</v-list-item-title>
-                </v-list-item>
-              </NuxtLink>
+              <v-btn to="/contact" plain>
+                <v-list-item-icon>
+                  <v-icon>mdi-phone</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title>Contact</v-list-item-title>
+              </v-btn>
             </v-list-item-group>
             <v-list-item-group>
               <NuxtLink class="navLink" to="/contact">
@@ -86,7 +80,4 @@ export default {
 };
 </script>
 <style>
-.navLink{
-  text-decoration: none;
-}
 </style>

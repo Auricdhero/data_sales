@@ -153,7 +153,7 @@
         <v-col>
           <v-hover v-slot="{ hover }">
             <v-card class="mx-auto" color="grey lighten-4" max-width="600">
-              <v-img :aspect-ratio="16 / 9" :src="vodaLogo">
+              <v-img :aspect-ratio="16 / 9" :src="voda">
                 <v-expand-transition>
                   <div
                     v-if="hover"
@@ -179,7 +179,6 @@
                 <h3 class="text-h4 font-weight-light orange--text mb-2">
                   Vodafone Data
                 </h3>
-                
               </v-card-text>
             </v-card>
           </v-hover>
@@ -210,11 +209,10 @@
                 >
                   <v-icon>mdi-cart</v-icon>
                 </v-btn>
-                
+
                 <h3 class="text-h4 font-weight-light orange--text mb-2">
                   MTN Data
                 </h3>
-                
               </v-card-text>
             </v-card>
           </v-hover>
@@ -245,30 +243,52 @@
                 >
                   <v-icon>mdi-cart</v-icon>
                 </v-btn>
-                
+
                 <h3 class="text-h4 font-weight-light orange--text mb-2">
                   AirtelTigo Data
                 </h3>
-                
               </v-card-text>
             </v-card>
           </v-hover>
         </v-col>
       </v-row>
     </v-container>
+
+    <div>
+      <h1>{{ merchant.business_name }}</h1>
+      <category-list :categories="categories"></category-list>
+      <product-list :products="products"></product-list>
+
+      <h3>
+        <n-link to="/products">Products</n-link>
+      </h3>
+    </div>
   </div>
 </template>
 
 <script>
-import mtnLogo from '~/static/mtnLogo.jpeg'
-import tigoLogo from '~/static/airteltigo.png'
-import vodaLogo from '~/static/vodaLogo.png'
+// import commerce from "~/common/commerce";
+import mtnLogo from "~/static/mtnLogo.jpeg";
+import tigoLogo from "~/static/airteltigo.png";
+import voda from "~/static/vodaLogo.png";
 export default {
   name: "IndexPage",
-  data:()=>({
+  data: () => ({
     mtnLogo,
     tigoLogo,
-    vodaLogo
-  })
+    voda,
+  }),
+
+  async asyncData({ $commerce }) {
+    const merchant = await $commerce.merchants.about();
+    const { data: categories } = await $commerce.categories.list();
+    const { data: products } = await $commerce.products.list();
+
+    return {
+      merchant,
+      categories,
+      products,
+    };
+  },
 };
 </script>
