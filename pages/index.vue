@@ -179,7 +179,6 @@
                 <h3 class="text-h4 font-weight-light orange--text mb-2">
                   Vodafone Data
                 </h3>
-                
               </v-card-text>
             </v-card>
           </v-hover>
@@ -210,11 +209,10 @@
                 >
                   <v-icon>mdi-cart</v-icon>
                 </v-btn>
-                
+
                 <h3 class="text-h4 font-weight-light orange--text mb-2">
                   MTN Data
                 </h3>
-                
               </v-card-text>
             </v-card>
           </v-hover>
@@ -245,30 +243,39 @@
                 >
                   <v-icon>mdi-cart</v-icon>
                 </v-btn>
-                
+
                 <h3 class="text-h4 font-weight-light orange--text mb-2">
                   AirtelTigo Data
                 </h3>
-                
               </v-card-text>
             </v-card>
           </v-hover>
         </v-col>
       </v-row>
     </v-container>
+
+    
+      <!-- <div>
+        <pre>{{ JSON.stringify(merchant, null, 2) }}</pre>
+        <pre>{{ JSON.stringify(categories, null, 2) }}</pre>
+        <pre>{{ JSON.stringify(products, null, 2) }}</pre>
+      </div> -->
+    
   </div>
+
+  
 </template>
 
 <script>
 import mtnLogo from '~/static/mtnLogo.jpeg'
-import tigoLogo from '~/static/airteltigo.png'
-import vodaLogo from '~/static/vodaLogo.png'
+import tigo from '~/static/airteltigo.png'
+import voda from '~/static/vodaLogo.png'
 export default {
   name: "IndexPage",
-  data:()=>({
+  data: () => ({
     mtnLogo,
-    tigoLogo,
-    vodaLogo
+    tigo,
+    voda
   })
 };
 </script>
