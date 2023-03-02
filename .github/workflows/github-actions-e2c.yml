@@ -20,6 +20,9 @@ jobs:
       - name: installing node 16 for production
         run: npm install node@16.0.0 --save-dev
 
+      - name: Create .env file
+        uses: SpicyPizza/create-envfile@v1.3.0
+
       - name: Install dependencies
         run: npm install
       
@@ -36,8 +39,6 @@ jobs:
         uses: easingthemes/ssh-deploy@main
         with:
           publish_dir: dist
-      - name: Create .env file
-        uses: SpicyPizza/create-envfile@v1.3.0
 
         env:
           SSH_PRIVATE_KEY: ${{ secrets.JESSCO_AWS }}
@@ -46,7 +47,6 @@ jobs:
           NUXT_ENV_CHEC_PUBLIC_API_KEY: ${{secrets.NUXT_ENV_CHEC_PUBLIC_API_KEY}}
           TARGET: /home/ubuntu/jessco.store/
           file_name: .env
-          fail_on_empty: false
 
           # publish_dir: .output/public
           # EXCLUDE: "/.output/public/, /node_modules/"
