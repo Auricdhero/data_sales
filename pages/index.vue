@@ -153,7 +153,7 @@
         <v-col>
           <v-hover v-slot="{ hover }">
             <v-card class="mx-auto" color="grey lighten-4" max-width="600">
-              <v-img :aspect-ratio="16 / 9" :src="voda">
+              <v-img :aspect-ratio="16 / 9" :src="vodaLogo">
                 <v-expand-transition>
                   <div
                     v-if="hover"
@@ -222,7 +222,7 @@
         <v-col>
           <v-hover v-slot="{ hover }">
             <v-card class="mx-auto" color="grey lighten-4" max-width="600">
-              <v-img :aspect-ratio="16 / 9" :src="tigo">
+              <v-img :aspect-ratio="16 / 9" :src="tigoLogo">
                 <v-expand-transition>
                   <div
                     v-if="hover"
@@ -261,14 +261,14 @@
 
 <script>
 import mtnLogo from '~/static/mtnLogo.jpeg'
-import tigo from '~/static/airteltigo.png'
-import voda from '~/static/vodaLogo.png'
+import tigoLogo from '~/static/airteltigo.png'
+import vodaLogo from '~/static/vodaLogo.png'
 export default {
   name: "IndexPage",
   data:()=>({
     mtnLogo,
-    tigo,
-    voda
+    tigoLogo,
+    vodaLogo
   })
 };
 </script>
