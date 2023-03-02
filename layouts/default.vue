@@ -48,6 +48,16 @@
                 </v-list-item>
               </NuxtLink>
             </v-list-item-group>
+            <v-list-item-group>
+              <NuxtLink class="navLink" to="/contact">
+                <v-list-item>
+                  <v-list-item-icon>
+                    <v-icon>mdi-phone</v-icon>
+                  </v-list-item-icon>
+                  <v-list-item-title>Login</v-list-item-title>
+                </v-list-item>
+              </NuxtLink>
+            </v-list-item-group>
           </v-list>
         </v-navigation-drawer>
         <v-sheet
