@@ -18,7 +18,7 @@ jobs:
           node-version: '16.x'
 
       - name: installing node 16 for production
-        run: npm install node@16.0.0 --save-dev
+        run: npm install node@16.0.0 --save-dev --force
 
       - name: Install dependencies
         run: npm install --force
