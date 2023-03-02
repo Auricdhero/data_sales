@@ -25,7 +25,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    ["~/plugins/supabaseclients.ts"],
+    // "~/plugins/supabaseclients.js",
     '~/plugins/commerce.js'
   ],
 
@@ -40,10 +40,10 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    ['nuxt-supabase', {
-      supabaseUrl: 'https://hryyzqbesmhsnbpdtlgd.supabase.co',
-      supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhyeXl6cWJlc21oc25icGR0bGdkIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzYwMTg1NjAsImV4cCI6MTk5MTU5NDU2MH0.Jm1EupOwrTMN71XLrEWET1nBLD818O5CHFmJiAbiy8M'
-    }]
+    // ['nuxt-supabase', {
+    //   supabaseUrl: 'https://hryyzqbesmhsnbpdtlgd.supabase.co',
+    //   supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhyeXl6cWJlc21oc25icGR0bGdkIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzYwMTg1NjAsImV4cCI6MTk5MTU5NDU2MH0.Jm1EupOwrTMN71XLrEWET1nBLD818O5CHFmJiAbiy8M'
+    // }]
   ],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
