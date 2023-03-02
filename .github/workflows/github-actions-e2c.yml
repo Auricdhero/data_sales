@@ -21,7 +21,7 @@ jobs:
         run: npm install node@16.0.0 --save-dev
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --force
       
       - name: Generate static files
         run: npm run build && npm run generate
