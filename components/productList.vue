@@ -8,6 +8,7 @@
           }"
         >
           <product-view :product="product"></product-view>
+          <product-image :aspect-ratio="16 / 9" :product="product"></product-image>
         </n-link>
       </li>
     </ul>
