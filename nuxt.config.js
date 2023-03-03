@@ -25,7 +25,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    ["~/plugins/supabaseClient.js"],
+    '~/plugins/supabaseClient.js',
     // "~/plugins/supabaseclients.js",
     '~/plugins/commerce.js'
   ],

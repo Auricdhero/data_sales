@@ -15,9 +15,9 @@ async function getCountries() {
 onMounted(() => {
     getCountries()
 })
-    < ul >
-    <li v-for="report in reports" : key="report.id">{{ report.name }}</li>
-</ul > <ul>
-    <li v-for="report in reports" :key="country.id">{{ report.name }}</li>
-  </ul >
-</template >
+//     < ul >
+//     <li v-for="report in reports" : key="report.id">{{ report.name }}</li>
+// </ul > <ul>
+//     <li v-for="report in reports" :key="country.id">{{ report.name }}</li>
+//   </ul >
+// </template >
