@@ -18,13 +18,10 @@ jobs:
           node-version: '16.x'
 
       - name: installing node 16 for production
-        run: npm install node@16.0.0 --save-dev
-
-      - name: Create .env file
-        uses: SpicyPizza/create-envfile@v1.3.0
+        run: npm install node@16.0.0 --save-dev --force
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --force
       
       - name: Generate static files
         run: npm run build && npm run generate
@@ -46,7 +43,6 @@ jobs:
           REMOTE_USER: ubuntu
           NUXT_ENV_CHEC_PUBLIC_API_KEY: ${{secrets.NUXT_ENV_CHEC_PUBLIC_API_KEY}}
           TARGET: /home/ubuntu/jessco.store/
-          file_name: .env
 
           # publish_dir: .output/public
           # EXCLUDE: "/.output/public/, /node_modules/"
