@@ -157,10 +157,10 @@
                 <v-expand-transition>
                   <div
                     v-if="hover"
-                    class="d-flex transition-fast-in-fast-out blue darken-2 v-card--reveal text-h2 white--text"
+                    class="d-flex transition-fast-in-fast-out blue darken-2 v-card--reveal text-h2 white--text text-center "
                     style="height: 100%"
                   >
-                    {{ products.price.formatted_with_symbol }}
+                    <p class="text-center mt-15 ml-13">{{ products.price.formatted_with_symbol }}</p>
                   </div>
                 </v-expand-transition>
               </v-img>
