@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mt-15">
     <v-parallax
       dark
       src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
@@ -150,7 +150,40 @@
       <h2 class="text-center">Data Packages</h2>
       <br />
       <v-row>
-        <v-col v-for="n in 3" :key="n">
+        <v-col>
+          <v-hover v-slot="{ hover }">
+            <v-card class="mx-auto" color="grey lighten-4" max-width="600">
+              <v-img :aspect-ratio="16 / 9" :src="voda">
+                <v-expand-transition>
+                  <div
+                    v-if="hover"
+                    class="d-flex transition-fast-in-fast-out orange darken-2 v-card--reveal text-h2 white--text"
+                    style="height: 100%"
+                  >
+                    GHS 20.00
+                  </div>
+                </v-expand-transition>
+              </v-img>
+              <v-card-text class="pt-6" style="position: relative">
+                <v-btn
+                  absolute
+                  color="blue"
+                  class="white--text"
+                  fab
+                  large
+                  right
+                  top
+                >
+                  <v-icon>mdi-cart</v-icon>
+                </v-btn>
+                <h3 class="text-h4 font-weight-light orange--text mb-2">
+                  Vodafone Data
+                </h3>
+              </v-card-text>
+            </v-card>
+          </v-hover>
+        </v-col>
+        <v-col>
           <v-hover v-slot="{ hover }">
             <v-card class="mx-auto" color="grey lighten-4" max-width="600">
               <v-img :aspect-ratio="16 / 9" :src="mtnLogo">
@@ -184,10 +217,44 @@
             </v-card>
           </v-hover>
         </v-col>
+        <v-col>
+          <v-hover v-slot="{ hover }">
+            <v-card class="mx-auto" color="grey lighten-4" max-width="600">
+              <v-img :aspect-ratio="16 / 9" :src="tigoLogo">
+                <v-expand-transition>
+                  <div
+                    v-if="hover"
+                    class="d-flex transition-fast-in-fast-out orange darken-2 v-card--reveal text-h2 white--text"
+                    style="height: 100%"
+                  >
+                    GHS 20.00
+                  </div>
+                </v-expand-transition>
+              </v-img>
+              <v-card-text class="pt-6" style="position: relative">
+                <v-btn
+                  absolute
+                  color="blue"
+                  class="white--text"
+                  fab
+                  large
+                  right
+                  top
+                >
+                  <v-icon>mdi-cart</v-icon>
+                </v-btn>
+
+                <h3 class="text-h4 font-weight-light orange--text mb-2">
+                  AirtelTigo Data
+                </h3>
+              </v-card-text>
+            </v-card>
+          </v-hover>
+        </v-col>
       </v-row>
     </v-container>
 
-    <div>
+    <!-- <div>
       <h1>{{ merchant.business_name }}</h1>
       <category-list :categories="categories"></category-list>
       <product-list :products="products"></product-list>
@@ -195,7 +262,7 @@
       <h3>
         <n-link to="/products">Products</n-link>
       </h3>
-    </div>
+    </div> -->
   </div>
 </template>
 
