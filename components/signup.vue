@@ -33,7 +33,6 @@
               <v-icon>mdi-google</v-icon> Google
             </v-btn>
           </v-col> -->
-          
         </v-row>
       </v-container>
     </v-form>
