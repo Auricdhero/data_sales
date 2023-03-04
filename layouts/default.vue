@@ -2,19 +2,14 @@
   <v-app>
     <v-main>
       <v-card class="overflow-hidden">
-        <v-app-bar
-          absolute
-          color="white"
-          elevate-on-scroll
-          scroll-target="#scrolling-techniques-7"
-        >
+        <v-app-bar absolute color="white" elevate-on-scroll scroll-target="#scrolling-techniques-7">
           <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
 
           <v-toolbar-title>Jessco</v-toolbar-title>
 
           <v-spacer></v-spacer>
 
-          <v-btn to="/login" rounded color="primary" dark> Get Started </v-btn>
+          <v-btn rounded color="black" dark @click="signOut"> Logout </v-btn>
         </v-app-bar>
         <v-navigation-drawer v-model="drawer" absolute temporary>
           <v-list nav dense>
@@ -45,11 +40,7 @@
 
           </v-list>
         </v-navigation-drawer>
-        <v-sheet
-          id="scrolling-techniques-7"
-          class="overflow-y-auto"
-          max-height="796"
-        >
+        <v-sheet id="scrolling-techniques-7" class="overflow-y-auto" max-height="796">
           <v-container fluid style="height: 100%">
             <Nuxt />
             <theFooter />
@@ -68,7 +59,16 @@ export default {
     drawer: false,
     group: null,
   }),
+
+  methods: {
+    async signOut() {
+
+      $nuxt.$fire.auth.signOut()
+
+
+    }
+
+  }
 };
 </script>
-<style>
-</style>
+<style></style>

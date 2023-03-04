@@ -25,8 +25,6 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/supabaseClient.js',
-    // "~/plugins/supabaseclients.js",
     '~/plugins/commerce.js'
   ],
 
@@ -39,13 +37,48 @@ export default {
     '@nuxtjs/vuetify',
   ],
 
+
+  router: {
+    middleware: ['auth']
+  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // ['nuxt-supabase', {
-    //   supabaseUrl: 'https://hryyzqbesmhsnbpdtlgd.supabase.co',
-    //   supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhyeXl6cWJlc21oc25icGR0bGdkIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzYwMTg1NjAsImV4cCI6MTk5MTU5NDU2MH0.Jm1EupOwrTMN71XLrEWET1nBLD818O5CHFmJiAbiy8M'
-    // }]
+    '@nuxtjs/pwa',
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: "AIzaSyAlhHCMssRYrKP6fadFjtGvmI--MTk9IpE",
+          authDomain: "data-sales-412c5.firebaseapp.com",
+          projectId: "data-sales-412c5",
+          storageBucket: "data-sales-412c5.appspot.com",
+          messagingSenderId: "1031423604841",
+          appId: "1:1031423604841:web:ff4e07e8deb268b7e2caf8",
+          measurementId: "G-0N4NRHPCCC"
+        },
+        services: {
+          auth: {
+            persistence: 'local', // default
+            initialize: {
+              // onAuthStateChangedMutation: 'ON_AUTH_STATE_CHANGED_MUTATION',
+              onAuthStateChangedAction: 'onAuthStateChangedAction',
+              subscribeManually: false
+            },
+            ssr: false, // default
+          }
+        }
+      }
+    ],
+
   ],
+
+  pwa: {
+    manifest: {
+      lang: 'en'
+    }
+  },
+
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
@@ -70,4 +103,5 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
+
 }
