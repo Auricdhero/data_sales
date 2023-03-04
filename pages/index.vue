@@ -150,17 +150,17 @@
       <h2 class="text-center">Data Packages</h2>
       <br />
       <v-row>
-        <v-col>
+        <v-col cols="4" v-for="(products, index) in products" :key="index">
           <v-hover v-slot="{ hover }">
             <v-card class="mx-auto" color="grey lighten-4" max-width="600">
-              <v-img :aspect-ratio="16 / 9" :src="voda">
+              <v-img :aspect-ratio="16/9" v-if="products.image" :src="products.image.url">
                 <v-expand-transition>
                   <div
                     v-if="hover"
-                    class="d-flex transition-fast-in-fast-out orange darken-2 v-card--reveal text-h2 white--text"
+                    class="d-flex transition-fast-in-fast-out blue darken-2 v-card--reveal text-h2 white--text text-center "
                     style="height: 100%"
                   >
-                    GHS 20.00
+                    <p class="text-center mt-15 ml-13">{{ products.price.formatted_with_symbol }}</p>
                   </div>
                 </v-expand-transition>
               </v-img>
@@ -177,13 +177,13 @@
                   <v-icon>mdi-cart</v-icon>
                 </v-btn>
                 <h3 class="text-h4 font-weight-light orange--text mb-2">
-                  Vodafone Data
+                  {{ products.name }}
                 </h3>
               </v-card-text>
             </v-card>
           </v-hover>
         </v-col>
-        <v-col>
+        <!-- <v-col>
           <v-hover v-slot="{ hover }">
             <v-card class="mx-auto" color="grey lighten-4" max-width="600">
               <v-img :aspect-ratio="16 / 9" :src="mtnLogo">
@@ -216,8 +216,8 @@
               </v-card-text>
             </v-card>
           </v-hover>
-        </v-col>
-        <v-col>
+        </v-col> -->
+        <!-- <v-col>
           <v-hover v-slot="{ hover }">
             <v-card class="mx-auto" color="grey lighten-4" max-width="600">
               <v-img :aspect-ratio="16 / 9" :src="tigoLogo">
@@ -250,7 +250,7 @@
               </v-card-text>
             </v-card>
           </v-hover>
-        </v-col>
+        </v-col> -->
       </v-row>
     </v-container>
 
@@ -271,13 +271,16 @@
 import mtnLogo from "~/static/mtnLogo.jpeg";
 import tigoLogo from "~/static/airteltigo.png";
 import voda from "~/static/vodaLogo.png";
+
 export default {
   name: "IndexPage",
+  props: ["product"],
   data: () => ({
     mtnLogo,
     tigoLogo,
     voda,
   }),
+  
 
   async asyncData({ $commerce }) {
     const merchant = await $commerce.merchants.about();
@@ -290,5 +293,8 @@ export default {
       products,
     };
   },
+  
+  
 };
+
 </script>
