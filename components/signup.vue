@@ -1,5 +1,5 @@
 <template>
-  <v-card flat>
+  
     <v-form v-model="valid" @submit.prevent="signup">
       <v-container>
         <v-col>
@@ -26,14 +26,7 @@
           required></v-checkbox>
 
         <v-btn color="purple" class="mr-4" @click="signup"> Sign Up </v-btn>
-        <v-divider></v-divider>
-        <v-row align="center">
-          <!-- <v-col>
-            <v-btn color="purple" class="mr-4" @click="validate">
-              <v-icon>mdi-google</v-icon> Google
-            </v-btn>
-          </v-col> 
-      </v-row> -->
+       
     </v-container>
   </v-form>
 </template>
