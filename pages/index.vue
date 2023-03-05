@@ -153,14 +153,20 @@
         <v-col cols="4" v-for="(products, index) in products" :key="index">
           <v-hover v-slot="{ hover }">
             <v-card class="mx-auto" color="grey lighten-4" max-width="600">
-              <v-img :aspect-ratio="16/9" v-if="products.image" :src="products.image.url">
+              <v-img
+                :aspect-ratio="16 / 9"
+                v-if="products.image"
+                :src="products.image.url"
+              >
                 <v-expand-transition>
                   <div
                     v-if="hover"
-                    class="d-flex transition-fast-in-fast-out blue darken-2 v-card--reveal text-h2 white--text text-center "
+                    class="d-flex transition-fast-in-fast-out blue darken-2 v-card--reveal text-h2 white--text text-center"
                     style="height: 100%"
                   >
-                    <p class="text-center mt-15 ml-13">{{ products.price.formatted_with_symbol }}</p>
+                    <p class="text-center mt-15 ml-13">
+                      {{ products.price.formatted_with_symbol }}
+                    </p>
                   </div>
                 </v-expand-transition>
               </v-img>
@@ -173,6 +179,7 @@
                   large
                   right
                   top
+                  @click="addToCart(product.id, 1)"
                 >
                   <v-icon>mdi-cart</v-icon>
                 </v-btn>
@@ -183,86 +190,8 @@
             </v-card>
           </v-hover>
         </v-col>
-        <!-- <v-col>
-          <v-hover v-slot="{ hover }">
-            <v-card class="mx-auto" color="grey lighten-4" max-width="600">
-              <v-img :aspect-ratio="16 / 9" :src="mtnLogo">
-                <v-expand-transition>
-                  <div
-                    v-if="hover"
-                    class="d-flex transition-fast-in-fast-out orange darken-2 v-card--reveal text-h2 white--text"
-                    style="height: 100%"
-                  >
-                    GHS 20.00
-                  </div>
-                </v-expand-transition>
-              </v-img>
-              <v-card-text class="pt-6" style="position: relative">
-                <v-btn
-                  absolute
-                  color="blue"
-                  class="white--text"
-                  fab
-                  large
-                  right
-                  top
-                >
-                  <v-icon>mdi-cart</v-icon>
-                </v-btn>
-
-                <h3 class="text-h4 font-weight-light orange--text mb-2">
-                  MTN Data
-                </h3>
-              </v-card-text>
-            </v-card>
-          </v-hover>
-        </v-col> -->
-        <!-- <v-col>
-          <v-hover v-slot="{ hover }">
-            <v-card class="mx-auto" color="grey lighten-4" max-width="600">
-              <v-img :aspect-ratio="16 / 9" :src="tigoLogo">
-                <v-expand-transition>
-                  <div
-                    v-if="hover"
-                    class="d-flex transition-fast-in-fast-out orange darken-2 v-card--reveal text-h2 white--text"
-                    style="height: 100%"
-                  >
-                    GHS 20.00
-                  </div>
-                </v-expand-transition>
-              </v-img>
-              <v-card-text class="pt-6" style="position: relative">
-                <v-btn
-                  absolute
-                  color="blue"
-                  class="white--text"
-                  fab
-                  large
-                  right
-                  top
-                >
-                  <v-icon>mdi-cart</v-icon>
-                </v-btn>
-
-                <h3 class="text-h4 font-weight-light orange--text mb-2">
-                  AirtelTigo Data
-                </h3>
-              </v-card-text>
-            </v-card>
-          </v-hover>
-        </v-col> -->
       </v-row>
     </v-container>
-
-    <!-- <div>
-      <h1>{{ merchant.business_name }}</h1>
-      <category-list :categories="categories"></category-list>
-      <product-list :products="products"></product-list>
-
-      <h3>
-        <n-link to="/products">Products</n-link>
-      </h3>
-    </div> -->
   </div>
 </template>
 
@@ -271,6 +200,7 @@
 import mtnLogo from "~/static/mtnLogo.jpeg";
 import tigoLogo from "~/static/airteltigo.png";
 import voda from "~/static/vodaLogo.png";
+// import { mapActions } from 'vuex'
 
 export default {
   name: "IndexPage",
@@ -280,7 +210,6 @@ export default {
     tigoLogo,
     voda,
   }),
-  
 
   async asyncData({ $commerce }) {
     const merchant = await $commerce.merchants.about();
@@ -293,8 +222,7 @@ export default {
       products,
     };
   },
-  
+
   
 };
-
 </script>
