@@ -25,7 +25,7 @@
         <v-checkbox v-model="checkbox" :rules="[(v) => !!v || 'You must agree to continue!']" label="Do you agree?"
           required></v-checkbox>
 
-        <v-btn color="purple" class="mr-4" @click="signup"> Sign Up </v-btn>
+        <v-btn color="blue" class="mr-4" @click="signup"> Sign Up </v-btn>
        
     </v-container>
   </v-form>
