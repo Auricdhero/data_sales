@@ -3,8 +3,8 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - jessco',
-    title: 'jessco',
+    titleTemplate: '%s -',
+    title: 'Jessco',
     htmlAttrs: {
       lang: 'en'
     },
@@ -18,7 +18,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  target: 'static',
+  // target: 'server',
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
@@ -35,6 +35,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    // '@nuxtjs/auth-next',
   ],
 
 
@@ -103,5 +104,4 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
-
 }
