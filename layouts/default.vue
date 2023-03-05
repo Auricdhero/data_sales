@@ -10,7 +10,7 @@
           <v-spacer></v-spacer>
 
           <v-btn v-show="avatarShow" rounded color="black" dark @click="signOut"> Logout </v-btn>
-          
+
         </v-app-bar>
         <v-navigation-drawer v-model="drawer" absolute temporary>
           <v-list nav dense>
@@ -50,16 +50,16 @@
           </v-list>
 
           <template v-slot:append>
-          <div class="pa-2">
-            <v-btn block>
-              Logout
-            </v-btn>
-          </div>
-        </template> 
+            <div class="pa-2">
+              <v-btn block>
+                Logout
+              </v-btn>
+            </div>
+          </template>
         </v-navigation-drawer>
         <!-- <v-main style="height: 400px"></v-main> -->
         <v-sheet id="scrolling-techniques-7" class="overflow-y-auto" max-height="796">
-          <v-container fluid style="height: 100%">
+          <v-container fluid style="height: 50%">
             <Nuxt />
             <theFooter />
           </v-container>
@@ -81,16 +81,29 @@ export default {
     avatarShow: false
   }),
 
+  // watchEffect(){
 
+  // }
+
+  // beforeMount() {
+  //   const auth = getAuth();
+  //   const user = auth.currentUser;
+  //   if (user) {
+  //     return this.avatarShow = true
+  //     console.log("Showing Logout", user.email);
+  //   } else {
+  //     return this.avatarShow = false
+  //   }
+  // },
   mounted() {
-      const auth = getAuth();
-      const user = auth.currentUser;
-      if (user) {
-        this.avatarShow = true
-        console.log("Showing Logout", user.email);
-      }else{
-        return this.avatarShow = false
-      }
+    const auth = getAuth();
+    const user = auth.currentUser;
+    if (user) {
+      return this.avatarShow = true
+      console.log("Showing Logout", user.email);
+    } else {
+      return this.avatarShow = false
+    }
   },
 
   methods: {
