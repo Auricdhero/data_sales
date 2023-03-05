@@ -31,6 +31,7 @@ export default {
       snackbarText: 'No error message',
       email: "",
       name: "",
+      nameRules:[],
       password: "",
       username: "Torkornoo",
       rules: {

@@ -1,18 +1,12 @@
 <template>
   <v-card flat>
-    <v-form v-model="valid" @submit.prevent="signup">
+    <v-form @submit.prevent="signup">
       <v-container>
         <v-col>
           <v-col>
-            <v-text-field v-model="fullName" :rules="nameRules" :counter="30" label="Enter Full Name"
-              required></v-text-field>
-          </v-col>
-          <v-col>
             <v-text-field v-model="email" :rules="nameRules" :counter="30" label="Email Address" required></v-text-field>
           </v-col>
-          <v-col>
-            <v-text-field v-model="username" :rules="nameRules" :counter="10" label="User Name" require></v-text-field>
-          </v-col>
+
           <v-col>
             <v-text-field v-model="password" :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
               :rules="[rules.required, rules.min]" :type="show1 ? 'text' : 'password'" name="input-10-1" label="Password"
@@ -20,16 +14,16 @@
           </v-col>
         </v-col>
         <v-row>
-          
+
         </v-row>
         <v-checkbox v-model="checkbox" :rules="[(v) => !!v || 'You must agree to continue!']" label="Do you agree?"
           required></v-checkbox>
 
-        <v-btn color="purple" class="mr-4" @click="signup"> Sign Up </v-btn>
+        <v-btn color="purple" class="mr-4 mb-8" @click="signup"> Sign Up </v-btn>
         <v-divider></v-divider>
         <v-row align="center">
           <!-- <v-col>
-            <v-btn color="purple" class="mr-4" @click="validate">
+            <v-btn color="purple" class="mr-4 ml-4 mt-4" @click="validate">
               <v-icon>mdi-google</v-icon> Google
             </v-btn>
           </v-col> -->
@@ -42,7 +36,7 @@
 <script>
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 export default {
-  name: "signup",
+  name: "Signup",
   data() {
     return {
       show1: false,
@@ -53,6 +47,10 @@ export default {
       fullName: "",
       username: "",
       password: "",
+      snackbar: false,
+      snackbarText: 'No error message',
+      nameRules: [],
+      checkbox: false,
       rules: {
         required: (value) => !!value || "Required.",
         min: (v) => v.length >= 8 || "Min 8 characters",
@@ -62,8 +60,9 @@ export default {
   },
   methods: {
     async signup() {
+      let that = this
       const auth = getAuth();
-      createUserWithEmailAndPassword(auth, email, password)
+      createUserWithEmailAndPassword(auth, this.email, this.password)
         .then((userCredential) => {
           // Signed in 
           const user = userCredential.user;
@@ -74,6 +73,8 @@ export default {
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
+          that.snackbarText = error.message
+          that.snackbar = true
           console.log("error", error);
           // ..
         });
@@ -81,5 +82,3 @@ export default {
   },
 };
 </script>
-
-<style></style>
