@@ -1,12 +1,18 @@
 <template>
   <v-card flat>
-    <v-form @submit.prevent="signup">
+    <v-form v-model="valid" @submit.prevent="signup">
       <v-container>
         <v-col>
           <v-col>
+            <v-text-field v-model="fullName" :rules="nameRules" :counter="30" label="Enter Full Name"
+              required></v-text-field>
+          </v-col>
+          <v-col>
             <v-text-field v-model="email" :rules="nameRules" :counter="30" label="Email Address" required></v-text-field>
           </v-col>
-
+          <v-col>
+            <v-text-field v-model="username" :rules="nameRules" :counter="10" label="User Name" require></v-text-field>
+          </v-col>
           <v-col>
             <v-text-field v-model="password" :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
               :rules="[rules.required, rules.min]" :type="show1 ? 'text' : 'password'" name="input-10-1" label="Password"
@@ -14,23 +20,22 @@
           </v-col>
         </v-col>
         <v-row>
-
+          
         </v-row>
         <v-checkbox v-model="checkbox" :rules="[(v) => !!v || 'You must agree to continue!']" label="Do you agree?"
           required></v-checkbox>
 
-        <v-btn color="purple" class="mr-4 mb-8" @click="signup"> Sign Up </v-btn>
+        <v-btn color="purple" class="mr-4" @click="signup"> Sign Up </v-btn>
         <v-divider></v-divider>
         <v-row align="center">
           <!-- <v-col>
-            <v-btn color="purple" class="mr-4 ml-4 mt-4" @click="validate">
+            <v-btn color="purple" class="mr-4" @click="validate">
               <v-icon>mdi-google</v-icon> Google
             </v-btn>
-          </v-col> -->
-        </v-row>
-      </v-container>
-    </v-form>
-  </v-card>
+          </v-col> 
+      </v-row> -->
+    </v-container>
+  </v-form>
 </template>
 
 <script>
@@ -64,11 +69,10 @@ export default {
       const auth = getAuth();
       createUserWithEmailAndPassword(auth, this.email, this.password)
         .then((userCredential) => {
-          // Signed in 
+          // Signed in
           const user = userCredential.user;
           console.log("user", user);
           // ...
-
         })
         .catch((error) => {
           const errorCode = error.code;
