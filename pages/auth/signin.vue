@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-15" style="height: 45em;">
+    <div class="mt-15" style="height: 41.5em;">
         <v-container>
             <v-card>
                 <v-tabs horizontal>
