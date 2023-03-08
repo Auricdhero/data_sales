@@ -14,6 +14,9 @@ const actions = {
         uid,
         email,
       })
+      this.$router.push({
+        path: '/',
+      })
     }
   },
 }
