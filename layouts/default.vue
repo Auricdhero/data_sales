@@ -77,7 +77,7 @@ export default {
   data: () => ({
     drawer: false,
     group: null,
-    show: false,
+    show: true,
     avatarShow: false
   }),
 
@@ -95,20 +95,24 @@ export default {
   //     return this.avatarShow = false
   //   }
   // },
-  mounted() {
-    const auth = getAuth();
-    const user = auth.currentUser;
-    if (user) {
-      return this.avatarShow = true
-      console.log("Showing Logout", user.email);
-    } else {
-      return this.avatarShow = false
-    }
-  },
+
+
+  // mounted() {
+  //   const auth = getAuth();
+  //   const user = auth.currentUser;
+  //   if (user) {
+  //     return this.avatarShow = true
+  //     console.log("Showing Logout", user.email);
+  //   } else {
+  //     return this.avatarShow = false
+  //   }
+  // },
 
   methods: {
     async signOut() {
-      $nuxt.$fire.auth.signOut();
+      $nuxt.$fire.auth.signOut().then((result)=>{
+        console.log("user is logged out"); 
+      })
     }
   }
 };
