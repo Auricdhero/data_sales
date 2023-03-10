@@ -52,6 +52,7 @@ export default {
       },
     };
   },
+  
   methods: {
     async login() {
       let that = this;

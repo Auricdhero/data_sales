@@ -38,15 +38,6 @@
                 <v-list-item-title>Contact</v-list-item-title>
               </v-btn>
             </v-list-item-group>
-            <v-list-item-group>
-              <v-btn to="/contact" plain>
-                <v-list-item-icon>
-                  <v-icon>mdi-phone</v-icon>
-                </v-list-item-icon>
-                <v-list-item-title>Account</v-list-item-title>
-              </v-btn>
-            </v-list-item-group>
-
           </v-list>
 
           <template v-slot:append>
@@ -81,37 +72,23 @@ export default {
     avatarShow: false
   }),
 
-  // watchEffect(){
-
-  // }
-
-  // beforeMount() {
-  //   const auth = getAuth();
-  //   const user = auth.currentUser;
-  //   if (user) {
-  //     return this.avatarShow = true
-  //     console.log("Showing Logout", user.email);
-  //   } else {
-  //     return this.avatarShow = false
-  //   }
-  // },
 
 
-  // mounted() {
-  //   const auth = getAuth();
-  //   const user = auth.currentUser;
-  //   if (user) {
-  //     return this.avatarShow = true
-  //     console.log("Showing Logout", user.email);
-  //   } else {
-  //     return this.avatarShow = false
-  //   }
-  // },
+  mounted() {
+    const auth = getAuth();
+    const user = auth.currentUser;
+    if (user) {
+      return this.avatarShow = true
+      console.log("Showing Logout", user.email);
+    } else {
+      return this.avatarShow = false
+    }
+  },
 
   methods: {
     async signOut() {
-      $nuxt.$fire.auth.signOut().then((result)=>{
-        console.log("user is logged out"); 
+      $nuxt.$fire.auth.signOut().then((result) => {
+        console.log("user is logged out");
       })
     }
   }
