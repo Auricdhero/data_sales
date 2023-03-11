@@ -70,10 +70,7 @@ export default {
             ssr: false, // default
           },
           firestore: true,  
-          database: {
-            emulatorPort: 9000,
-            emulatorHost: 'localhost',
-          }
+          database: true
         },
 
       }
