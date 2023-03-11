@@ -28,6 +28,9 @@
 </template>
 
 <script>
+export default{
+    // components:['signin', 'signup']
+}
 </script>
 
 <style lang="scss" scoped></style>
