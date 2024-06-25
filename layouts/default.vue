@@ -38,18 +38,19 @@
                 <v-list-item-title>Contact</v-list-item-title>
               </v-btn>
             </v-list-item-group>
+            <!-- <template v-slot:append> -->
+              <div class="pa-2">
+                <v-btn @click="signOut" block>
+                  Logout
+                </v-btn>
+              </div>
+            <!-- </template> -->
           </v-list>
 
-          <template v-slot:append>
-            <div class="pa-2">
-              <v-btn block>
-                Logout
-              </v-btn>
-            </div>
-          </template>
+
         </v-navigation-drawer>
         <!-- <v-main style="height: 400px"></v-main> -->
-        <v-sheet id="scrolling-techniques-7" class="overflow-y-auto" max-height="796">
+        <v-sheet id="scrolling-techniques-7" class="overflow-y-auto">
           <v-container fluid style="height: 50%">
             <Nuxt />
             <theFooter />
@@ -88,6 +89,7 @@ export default {
   methods: {
     async signOut() {
       $nuxt.$fire.auth.signOut().then((result) => {
+        router
         console.log("user is logged out");
       })
     }

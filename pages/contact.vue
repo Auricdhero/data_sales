@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mt-12 form-cont" max-height="755">
+    <div class="mt-12 form-cont" style="height: 100vh;">
       <h1 class="text-center">Get In Touch</h1>
       <v-spacer></v-spacer>
       <v-container>
